@@ -1,0 +1,22 @@
+{
+    "name": "inventory",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx lerna run --concurrency 1 --stream precommit"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "husky": "4.3.0",
+        "lerna": "^3.22.1",
+        "pg-hstore": "^2.3.3"
+    }
+}
