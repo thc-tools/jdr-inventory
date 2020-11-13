@@ -9,7 +9,7 @@ Promise.all([server.listen(process.env.PORT), connectToDb()])
         if (err) {
             console.error(`ERROR APOLLO START: ${err.message}`);
         } else {
-            console.log(`🚀 Listening on port ${url}`);
+            console.log(`🚀 Listening on ${url}`);
         }
     })
     .catch((err) => {
