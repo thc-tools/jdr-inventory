@@ -26,8 +26,9 @@
         "graphql": "15.4.0",
         "lodash": "4.17.20",
         "pg": "8.5.0",
-        "sequelize": "6.3.5",
-        "shortid": "2.2.16"
+        "reflect-metadata": "0.1.13",
+        "shortid": "2.2.16",
+        "typeorm": "0.2.29"
     },
     "devDependencies": {
         "@babel/cli": "7.12.1",

@@ -21,7 +21,11 @@ services:
             - "./packages/inventory-api:/inventory/inventory-api"
             - "api-node-modules:/inventory/inventory-api/node_modules"
         environment: 
-            API_DB_CONNECTION_STRING: "postgres://inventory-user:inventory-pwd@db:5432/inventory"
+            API_DB_HOST: "db"
+            API_DB_PORT: "5432"
+            API_DB_USERNAME: "inventory-user"
+            API_DB_PASSWORD: "inventory-pwd"
+            API_DB_DATABASE: "inventory"
         ports:
             - "9000:9000"
             - "9042:9042"
@@ -31,14 +35,14 @@ services:
     db:
         image: postgres:12.2-alpine
         ports:
-            - "5433:5433"
+            - "5432:5432"
         volumes:
-            - postgres_data:/var/lib/postgresql/data
+            - "postgres_data:/var/lib/postgresql/data"
         environment:
-            POSTGRES_DB: inventory
-            POSTGRES_USER: inventory-user
-            POSTGRES_PASSWORD: inventory-pwd
-            POSTGRES_HOST: "0.0.0.0:5433"
+            POSTGRES_DB: "inventory"
+            POSTGRES_USER: "inventory-user"
+            POSTGRES_PASSWORD: "inventory-pwd"
+            POSTGRES_HOST: "0.0.0.0:5432"
 
     pgadmin:
         image: dpage/pgadmin4
@@ -46,8 +50,8 @@ services:
         ports:
             - "8080:80"
         environment:
-            PGADMIN_DEFAULT_EMAIL: test
-            PGADMIN_DEFAULT_PASSWORD: test
+            PGADMIN_DEFAULT_EMAIL: "user@domain.com"
+            PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
         depends_on:
             - db
 
