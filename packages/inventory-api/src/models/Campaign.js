@@ -1,17 +1,11 @@
 // Libs
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Campaign {
-    @PrimaryColumn("number")
+    @PrimaryGeneratedColumn("number")
     id;
 
     @Column("text")
-    firstName;
-
-    @Column("text")
-    lastName;
-
-    @Column("text")
-    email;
+    name;
 }

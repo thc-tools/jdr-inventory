@@ -1,8 +1,10 @@
 // Libs
-import { createConnection } from "typeorm";
+import { createConnection, getConnection } from "typeorm";
 
 // Models
 import { entities } from "../models";
+
+export { getConnection };
 
 export function connectToDb() {
     return createConnection({
