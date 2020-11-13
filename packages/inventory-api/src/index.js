@@ -1,9 +1,10 @@
+require("reflect-metadata");
 require("dotenv").config();
 
 const { server } = require("./app");
-const { dbConnection } = require("./infrastructure/db");
+const { connectToDb } = require("./infrastructure/db");
 
-Promise.all([server.listen(process.env.PORT), dbConnection.authenticate()])
+Promise.all([server.listen(process.env.PORT), connectToDb()])
     .then(([{ url, err }]) => {
         if (err) {
             console.error(`ERROR APOLLO START: ${err.message}`);
