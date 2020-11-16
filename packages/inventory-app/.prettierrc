@@ -2,14 +2,5 @@
     "tabWidth": 4,
     "useTabs": false,
     "semi": true,
-    "quoteProps": "consistent",
-    "printWidth": 120,
-    "overrides": [
-        {
-            "files": "src/translations/**/*.js",
-            "options": {
-                "printWidth": 240
-            }
-        }
-    ]
+    "printWidth": 120
 }

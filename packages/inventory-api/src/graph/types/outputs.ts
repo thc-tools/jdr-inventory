@@ -13,4 +13,8 @@ export const outputs = gql`
         user: User
     }
 
+    type Campaign {
+        id: ID!
+        name: String!
+    }
 `;
