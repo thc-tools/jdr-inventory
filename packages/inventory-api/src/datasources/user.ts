@@ -1,5 +1,5 @@
 
-export function userDatasource(dataLoaders) {
+export function userDatasource() {
     return {
         initialize() {},
 

@@ -54,8 +54,8 @@ rm: _env ## stop and delete containers but leave network and volumes
 .PHONY: rm
 
 vendor: ## install repositories and vendors
-	$(ENV) $(DKC) $(DKC_CFG) run --rm api npm prune && npm i
-	$(ENV) $(DKC) $(DKC_CFG) run --rm app npm prune && npm i
+	$(ENV) $(DKC) $(DKC_CFG) run --rm api npm run pi
+	$(ENV) $(DKC) $(DKC_CFG) run --rm app npm run pi
 .PHONY: vendor
 
 logs: ## make logs svc='engine consumer'
