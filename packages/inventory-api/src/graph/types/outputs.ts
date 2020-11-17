@@ -4,7 +4,9 @@ import { gql } from "apollo-server";
 export const outputs = gql`
     type User {
         id: ID!
-        name: String
+        firstName: String
+        lastName: String
+        username: String 
         email: String
     }
 
