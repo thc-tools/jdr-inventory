@@ -9,3 +9,5 @@ export function createDataSources(manager: EntityManager) {
         users: new UserDataSource(manager)
     }
 }
+
+export type DataSources = ReturnType<typeof createDataSources>;
