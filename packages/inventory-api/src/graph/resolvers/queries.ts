@@ -1,13 +1,9 @@
-import { getConnection } from "../../infrastructure/db";
-import { Campaign } from "../../models";
 
 export const queryResolvers = {
-    users: (_parent, _args, _context) => [],
-    campaigns() {
-        const campaign = new Campaign();
-        
-        campaign.name = "haha";
+    users(_parent, _args, { dataSources }) {
+        const userDataSource = dataSources.users ;
 
-        return getConnection().manager.save(campaign);
+        return userDataSource.loadUsers();
     },
+    campaigns: () => [],
 };
