@@ -1,8 +1,11 @@
-export function responsify(promise, success) {
+export function responsify<P, R = P>(
+    promise: () => Promise<P>,
+    success: (p: P) => R
+): Promise<{ error?: string } | R> {
     try {
         return promise()
             .then(success)
-            .catch((err) => {
+            .catch((err: Error) => {
                 console.error(err);
                 return { error: err.message };
             });
