@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "",
     "scripts": {
-        "start": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'ts-node src/index.ts'",
+        "start": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'node --inspect=0.0.0.0:9042 --require ts-node/register src/index.ts'",
         "lint": "npx eslint --fix *.js src *.js",
         "pi": "npm prune && npm i"
     },
@@ -11,6 +11,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "apollo-datasource": "0.7.2",
         "apollo-server": "2.18.1",
         "dataloader": "2.0.0",
         "dotenv": "8.2.0",
