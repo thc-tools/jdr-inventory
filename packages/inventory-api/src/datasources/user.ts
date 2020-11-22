@@ -46,9 +46,6 @@ export class UserDataSource extends DataSource {
      * @param user User.
      */
     saveUser(user: User) {
-        if (user.isActive === undefined) {
-            user.isActive = false;
-        }
         return this.repository.save(user);
     }
 }

@@ -15,4 +15,4 @@ EXPOSE 9000
 EXPOSE 9042
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "watch"]
