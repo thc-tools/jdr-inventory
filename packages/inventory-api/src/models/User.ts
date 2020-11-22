@@ -17,6 +17,6 @@ export class User {
     @Column()
     username: string;
 
-    @Column()
-    isActive: boolean;
+    @Column({ default: false, nullable: false })
+    isActive?: boolean;
 }

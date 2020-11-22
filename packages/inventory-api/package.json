@@ -3,9 +3,14 @@
     "version": "0.1.0",
     "description": "",
     "scripts": {
-        "start": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'node --inspect=0.0.0.0:9042 --require ts-node/register src/index.ts'",
+        "codegen": "graphql-codegen --config codegen.yml",
         "lint": "npx eslint --fix *.js src *.js",
-        "pi": "npm prune && npm i"
+        "pi": "npm prune && npm i",
+        "start": "node --require ts-node/register src/index.ts",
+        "start:debug": "node --inspect=0.0.0.0:9042 --require ts-node/register src/index.ts",
+        "watch": "concurrently \"npm:watch-*\"",
+        "watch-codegen": "nodemon --watch 'src/graph/**' --ext 'ts,json' --ignore 'src/graph/generated.ts' --ignore 'src/graph/resolvers/**' --delay 8 --exec 'npm run codegen'",
+        "watch-node": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'npm run start:debug'"
     },
     "keywords": [],
     "author": "",
@@ -13,6 +18,7 @@
     "dependencies": {
         "apollo-datasource": "0.7.2",
         "apollo-server": "2.18.1",
+        "concurrently": "5.3.0",
         "dataloader": "2.0.0",
         "dotenv": "8.2.0",
         "graphql": "15.4.0",
@@ -22,6 +28,10 @@
         "typeorm": "0.2.29"
     },
     "devDependencies": {
+        "@graphql-codegen/cli": "1.19.2",
+        "@graphql-codegen/typescript": "1.17.11",
+        "@graphql-codegen/typescript-resolvers": "1.17.11",
+        "@graphql-codegen/introspection": "1.18.0",
         "@types/node": "14.14.7",
         "eslint": "7.13.0",
         "eslint-config-airbnb-base": "14.2.1",

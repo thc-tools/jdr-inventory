@@ -27,10 +27,6 @@ _env:
 	if [ ! -f .env  ]; then  cp .env.dist .env ; fi
 .PHONY: _env
 
-_upd:
-	$(ENV) $(DKC) $(DKC_CFG) up -d
-.PHONY: _upd
-
 ascii-brain:
 	cat ascii.txt
 .PHONY: ascii-brain
@@ -45,13 +41,25 @@ up: _env  ## docker-compose up in daemon mode + process status
 	$(MAKE) ps
 .PHONY: up
 
+_upd:
+	$(ENV) $(DKC) $(DKC_CFG) up -d
+.PHONY: _upd
+
 stop: _env ## stop containers only, can be restarted with `make up`
 	$(ENV) $(DKC) $(DKC_CFG) stop
 .PHONY: stop
 
+restart: _env ## restart containers only
+	$(ENV) $(DKC) $(DKC_CFG) restart ${svc}
+.PHONY: restart
+
 rm: _env ## stop and delete containers but leave network and volumes
 	$(ENV) $(DKC) $(DKC_CFG) rm -f -v -s
 .PHONY: rm
+
+build: ## build imgaes
+	$(ENV) $(DKC) $(DKC_CFG) build
+.PHONY: build
 
 vendor: ## install repositories and vendors
 	$(ENV) $(DKC) $(DKC_CFG) run --rm api npm run pi
