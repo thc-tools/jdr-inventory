@@ -11,7 +11,7 @@ export const mutationResolvers: MutationResolvers = {
 
         return responsify(
             () => userDataSource.saveUser({ ...user, isActive: false } as User),
-            (user) => ({ user })
+            (_user) => ({ user: _user })
         );
     },
 };

@@ -4,6 +4,8 @@ documents: null
 generates:
   src/graph/generated.ts:
     plugins:
+      - add:
+          content: "/* eslint-disable */"
       - "typescript"
       - "typescript-resolvers"
     config:

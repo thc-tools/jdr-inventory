@@ -11,7 +11,9 @@ import { User } from "../models/User";
  */
 export class UserDataSource extends DataSource {
     private manager: EntityManager;
+
     private repository: Repository<User>;
+    
     private dataLoader: DataLoader<string, User>;
 
     constructor(manager: EntityManager) {

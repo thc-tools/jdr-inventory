@@ -7,7 +7,7 @@ type TypesResolvers = {
 
 export const typeResolvers: TypesResolvers = {
     User: {
-        id(parent, _args, _context) {
+        id(parent) {
             return parent.id;
         },
     },
