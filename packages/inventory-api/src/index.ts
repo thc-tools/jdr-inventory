@@ -6,11 +6,12 @@ config();
 
 import { server } from "./app";
 import { connectToDb } from "./infrastructure/db";
+import { logger } from "./infrastructure/logger";
 
 Promise.all([server.listen(process.env.PORT), connectToDb()])
     .then(([{ url }]) => {
-        console.log(`🚀 Listening on ${url}`);
+        logger.info(`🚀 Listening on ${url}`);
     })
     .catch((err) => {
-        console.error(`ERROR START: ${err.message}`);
+        logger.error(`ERROR START: ${err.message}`);
     });

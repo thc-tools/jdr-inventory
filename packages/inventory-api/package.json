@@ -6,8 +6,8 @@
         "codegen": "graphql-codegen --config codegen.yml",
         "lint": "npx eslint --ext .ts --fix src/**",
         "pi": "npm prune && npm i",
-        "start": "node --require ts-node/register src/index.ts",
-        "start:debug": "node --inspect=0.0.0.0:9042 --require ts-node/register src/index.ts",
+        "start": "node --require ts-node/register src/index.ts | pino-pretty -t",
+        "start:debug": "node --inspect=0.0.0.0:9042 --require ts-node/register src/index.ts | pino-pretty -t",
         "watch": "concurrently \"npm:watch-*\"",
         "watch-codegen": "nodemon --watch 'src/graph/**' --ext 'ts,json' --ignore 'src/graph/generated.ts' --ignore 'src/graph/resolvers/**' --delay 8 --exec 'npm run codegen'",
         "watch-node": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'npm run start:debug'"
@@ -23,6 +23,8 @@
         "graphql": "15.4.0",
         "lodash": "4.17.20",
         "pg": "8.5.0",
+        "pino": "6.7.0",
+        "pino-pretty": "4.3.0",
         "reflect-metadata": "0.1.13",
         "typeorm": "0.2.29"
     },
