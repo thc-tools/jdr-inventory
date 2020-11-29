@@ -1,7 +1,7 @@
 // Libs
 import { gql } from "apollo-server";
 
-export const outputs = gql`
+export const userTypes = gql`
     type User {
         id: ID!
         firstName: String
@@ -15,8 +15,11 @@ export const outputs = gql`
         user: User
     }
 
-    type Campaign {
-        id: ID!
-        name: String!
+    input UserInput {
+        id: ID
+        firstName: String!
+        lastName: String!
+        username: String!
+        email: String!
     }
 `;
