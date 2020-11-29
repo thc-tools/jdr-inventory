@@ -1,6 +1,7 @@
 import { Campaign } from "./Campaign";
+import { Character } from "./Character";
 import { User } from "./User";
 
-export { Campaign, User };
+export { Campaign, Character, User };
 
-export const entities = [Campaign, User];
+export const entities = [Campaign, Character, User];

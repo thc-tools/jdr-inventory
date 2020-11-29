@@ -1,11 +1,12 @@
 // Libs
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 // Models
+import { Campaign } from "./Campaign";
 import { User } from "./User";
 
 @Entity()
-export class Campaign {
+export class Character {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
@@ -18,6 +19,9 @@ export class Campaign {
     @UpdateDateColumn()
     updateDate: string;
 
+    @ManyToOne(() => Campaign)
+    campaign: Campaign;
+
     @ManyToOne(() => User)
-    gameMaster: User;
+    user: User;
 }
