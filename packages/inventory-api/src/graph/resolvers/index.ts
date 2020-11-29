@@ -1,13 +1,11 @@
 // Types
 import { Resolvers } from "../generated";
 
-// Resolvers
-import { queryResolvers } from "./queries";
-import { mutationResolvers } from "./mutations";
-import { typeResolvers } from "./types";
+// Infrastructure
+import { mergeEntityResolvers } from "./_utils";
 
-export const resolvers: Resolvers = {
-    Query: queryResolvers,
-    Mutation: mutationResolvers,
-    ...typeResolvers,
-};
+// Resolvers
+import * as campaignResolvers from "./campaign.resolvers";
+import * as userResolvers from "./user.resolvers";
+
+export const resolvers: Resolvers = mergeEntityResolvers([campaignResolvers, userResolvers]);
