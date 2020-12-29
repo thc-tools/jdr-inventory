@@ -29,11 +29,11 @@
         "typeorm": "0.2.29"
     },
     "devDependencies": {
-        "@graphql-codegen/add": "2.0.1",
-        "@graphql-codegen/cli": "1.19.2",
-        "@graphql-codegen/introspection": "1.18.0",
-        "@graphql-codegen/typescript": "1.17.11",
-        "@graphql-codegen/typescript-resolvers": "1.17.11",
+        "@graphql-codegen/add": "2.0.2",
+        "@graphql-codegen/cli": "1.20.0",
+        "@graphql-codegen/introspection": "1.18.1",
+        "@graphql-codegen/typescript": "1.19.0",
+        "@graphql-codegen/typescript-resolvers": "1.18.1",
         "@types/node": "14.14.7",
         "@typescript-eslint/eslint-plugin": "4.8.1",
         "@typescript-eslint/parser": "4.8.1",
