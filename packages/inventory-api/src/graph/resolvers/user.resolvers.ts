@@ -20,7 +20,7 @@ export const mutationResolvers: MutationResolvers = {
         const userDataSource = dataSources.users;
 
         return responsify(
-            () => userDataSource.saveUser({ ...user, isActive: false } as User),
+            () => userDataSource.saveUser(user),
             (_user) => ({ user: _user })
         );
     },
@@ -31,5 +31,5 @@ export const typesResolvers: Resolvers = {
         id(parent) {
             return parent.id;
         },
-    }
+    },
 };

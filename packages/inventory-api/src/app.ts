@@ -7,7 +7,7 @@ import { logger } from "./infrastructure/logger";
 
 // Graph
 import { schema, resolvers } from "./graph";
-import { createDataSources } from "./datasources";
+import { createDataSources } from "./services";
 
 export const server = new ApolloServer({
     logger,

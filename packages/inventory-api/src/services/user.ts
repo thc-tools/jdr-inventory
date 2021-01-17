@@ -5,6 +5,7 @@ import * as DataLoader from "dataloader";
 
 // Models
 import { User } from "../models/User";
+import { UserCreation } from "../domain/entities/UserCreation";
 
 /**
  * User data source access class.
@@ -13,7 +14,7 @@ export class UserDataSource extends DataSource {
     private manager: EntityManager;
 
     private repository: Repository<User>;
-    
+
     private dataLoader: DataLoader<string, User>;
 
     constructor(manager: EntityManager) {
@@ -47,7 +48,7 @@ export class UserDataSource extends DataSource {
      * Save a User.
      * @param user User.
      */
-    saveUser(user: User) {
+    saveUser(user: UserCreation) {
         return this.repository.save(user);
     }
 }

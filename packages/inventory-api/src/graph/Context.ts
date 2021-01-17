@@ -1,4 +1,4 @@
 // Types
-import { DataSources } from "../datasources";
+import { DataSources } from "../services";
 
 export type Context = { dataSources: DataSources };

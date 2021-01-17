@@ -1,9 +1,11 @@
 import { Column, Index, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
+type UserId = string;
+
 @Entity()
 export class User {
     @PrimaryGeneratedColumn("uuid")
-    id: string;
+    id: UserId;
 
     @Column()
     firstName: string;
@@ -24,9 +26,9 @@ export class User {
 
     @Column()
     @CreateDateColumn()
-    creationDate: Date;
+    creationDate?: Date;
 
     @Column()
     @UpdateDateColumn()
-    updateDate: Date;
+    updateDate?: Date;
 }
