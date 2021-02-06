@@ -1,4 +1,4 @@
-FROM node:14.15.0-alpine@sha256:5a940b79d5655cc688cfb319bd4d0f18565bc732ae19fab6106daaa72aeb7a63
+FROM node:14.15.4-alpine@sha256:2ae9624a39ce437e7f58931a5747fdc60224c6e40f8980db90728de58e22af7c
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh 
