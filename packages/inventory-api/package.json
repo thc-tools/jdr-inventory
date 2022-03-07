@@ -20,7 +20,7 @@
         "apollo-server": "2.19.2",
         "dataloader": "2.0.0",
         "dotenv": "8.2.0",
-        "graphql": "15.4.0",
+        "graphql": "15.8.0",
         "lodash": "4.17.20",
         "pg": "8.5.0",
         "pino": "6.7.0",
