@@ -24,7 +24,7 @@
         "lodash": "4.17.20",
         "pg": "8.5.0",
         "pino": "6.7.0",
-        "pino-pretty": "4.3.0",
+        "pino-pretty": "4.8.0",
         "reflect-metadata": "0.1.13",
         "typeorm": "0.2.29"
     },
