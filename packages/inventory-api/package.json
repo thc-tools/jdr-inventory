@@ -22,7 +22,7 @@
         "dotenv": "8.2.0",
         "graphql": "15.4.0",
         "lodash": "4.17.20",
-        "pg": "8.5.0",
+        "pg": "8.11.3",
         "pino": "6.7.0",
         "pino-pretty": "4.3.0",
         "reflect-metadata": "0.1.13",
