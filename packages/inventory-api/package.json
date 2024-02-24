@@ -16,8 +16,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "apollo-datasource": "0.7.3",
-        "apollo-server": "2.19.2",
+        "apollo-datasource": "0.10.0",
+        "apollo-server": "2.26.2",
         "dataloader": "2.0.0",
         "dotenv": "8.2.0",
         "graphql": "15.4.0",
